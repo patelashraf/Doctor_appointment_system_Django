@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit-prfile{% endblock title %}
+
+{% block styletag %}
+.footer, #footer{
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+}
+h1{
+    font-size: 40px!important;
+    font-weight: 600!important;
+  }
+.bodyprofile{
+
+    background-color: #9ce2dc;
+}
+.bodypro{
+    justify-content: center;
+    align-items: center;
+    width: 50%!important; 
+    padding-left: 30px;  
+    padding-bottom: 30px;
+}
+
+{% endblock styletag %}
+
+{% block body %}
+
+<div class="container ">
+    <div class="bodyprofile py-3 ">
+<h1> Edit-profile </h1>
+<hr>
+<div class="bodypro">
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-success">Update profile</button>
+    </form> 
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock body %}

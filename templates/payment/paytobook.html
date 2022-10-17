@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Pay to go{% endblock title %}
+
+{% block body %}
+
+<form method="post" action="{% url 'appointment:paymetogo' %}">
+    {% csrf_token %}
+<div class="btn">
+    <a href="{% url 'appointment:paymetogo' %}" class="a"><button class="gobtn" role="button"><span class="text">$ MakePayment $</span></button></a>
+    <a href="{% url 'home' %}" class="a"><button class="gobtn" role="button"><span class="text">$ CancelPayment $</span></button></a>
+</div>
+</form>
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+<!-- Wrapper container -->
+<div class="contactform">
+<div class="container py-4 c-container">
+    <h5>Thank you {{ name }}</h5>
+
+    <h1 style="font-weight: 700;">REACH OUT TO US</h1>
+
+    <!-- Bootstrap 5 starter form -->
+    
+    <div class="form-div">
+
+    <form id="contactForm" method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+      <!-- Name input -->
+      <div class="mb-3 font-size">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-control contact-form" name="name" type="text" placeholder="Name" required/>
+      </div>
+  
+      <!-- Email address input -->
+      <div class="mb-3 font-size">
+        <label class="form-label" for="emailAddress">Email Address</label>
+        <input class="form-control contact-form" name="email" type="email" placeholder="Email Address" required />
+      </div>
+  
+      <!-- Message input -->
+      <div class="mb-3 font-size">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-control contact-form" name="message" type="text" placeholder="Message" style="height: 10rem;" required  ></textarea>
+      </div>
+  
+      <!-- Form submit button -->
+      <div class="d-grid">
+        <button class="submitcbtn"  type="submit">Submit</button>
+      </div>
+  
+    </form>
+  
+  </div>
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styletag %}
+.footer, #footer{
+        position: relative;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+}
+.aboutbg-self{
+    background-color: #9ce2dc;
+{% endblock styletag %}
+
+  <link rel="stylesheet" href="{% static 'style1.css' %}" type="text/css">
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+<section class="aboutbg-self">
+  <h1 class="fw-bolder text-center p-4">YOUR SEARCHED RESULT</h1>
+  <hr>
+  <h4 class="fw-bolder text-center pt-3 pb-3" >Available Doctors</h4>
+
+  <div class="container">  
+    <div class="row">
+ {% for n in alldata %}
+ 
+ <div class="col-md-4">
+    <div class="card mb-2">
+        {% if n.image %}
+        <img src="{% static 'logos/Drgupta.jpg' %}" class="card-img-top" alt="img" height="300px" width="200px">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ n.fname }} {{n.lname}}</h5> 
+            <p class="card-text">{{ n.gender }}</p>
+            <p class="card-text">Qualificaton: {{n.qualificaton}}</p>
+            <p class="card-text">Specialisation: {{n.specialisation}}</p>
+            <p class="card-text">Email: {{n.email}}</p>
+            <p class="card-text">City: {{n.city}}</p>
+            <p class="card-text">Contact: {{n.phone}}</p>
+            <p class="card-text"><small class="text-muted">3 min ago:</small></p>
+        </div>
+    </div>
+  </div>
+
+ {% endfor %}
+</diV>
+</div>
+</section>
+  {% endblock body %}

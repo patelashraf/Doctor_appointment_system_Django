@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Book appointment
+{% endblock title %}
+
+{% block styletag %}
+.footer, #footer{
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        right: 0%
+}
+
+.bodyuser
+{
+background-color: #9ce2dc;
+
+}
+
+h1{
+font-size: 40px!important;
+font-weight: 700!important;
+}
+
+{% endblock styletag %}
+
+{% block body %}
+
+<div class="container py-3 bodyuser">
+
+    <div class="row justify-content-center ">
+    
+                    <div class="col-lg-5 mb-5 mb-lg-0 ">
+                        <center> <h1>Take Appointment </h1></center>
+    
+                        <form action="" method="POST" >{% csrf_token %}
+    
+                            {{ form.as_table }}
+    
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <center><input type="submit" value="Book Appointment" class="btn btn-success btn-md text-white my-1"></center>
+                                </div>
+                            </div>
+    
+    
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+
+{% endblock body %}

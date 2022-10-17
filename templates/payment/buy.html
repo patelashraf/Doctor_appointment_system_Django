@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}buy {% endblock title %}
+
+{% block body %}
+<h1>do not refresh your page</h1>
+
+<form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm">
+    {% csrf_token %}
+    {% comment %} {{param_dict}} {% endcomment %}
+    {%  for key, value in param_dict.items %}
+    <input type="hidden" name="{{key}}" value="{{value}}"/>
+    {%  endfor %}
+
+</form>
+
+<script>
+
+{% comment %} document.paytm.submit() {% endcomment %}
+
+</script>
+{% endblock body %}

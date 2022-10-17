@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}doc register{% endblock title %}
+{% block styletag %}
+.bodyuser{
+  background-color: #f7ddbb;
+  height: 600px;
+}
+
+h1{
+  font-size: 40px!important;
+  font-weight: 700!important;
+}
+{% endblock styletag %}
+
+{% block body %}
+
+{% csrf_token %}
+<div class="bodyuser">
+<div class="container py-4">
+  <h1 class="Text-center pb-3">Doctor register here</h1>
+  <form method="post" action="#" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text">First and last name</span>
+        <input type="text" aria-label="First name" class="form-control" name="dfname">
+        <input type="text" aria-label="Last name" class="form-control"  name="dlname">
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="ig" name="img">
+        <label class="input-group-text" for="ig">Upload</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Qulaification:</span>
+        <input type="text" class="form-control" aria-label="Qulaification" name="qualification">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Specialisation:</span>
+        <input type="text" class="form-control" aria-label="specialisation" name="specialisation">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text ">Phone:</span>
+        <input type="Number" class="form-control" aria-label="Name" name="dphone" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label>Gender: </label>
+      <div class="form-check form-check-inline ">
+        <input class="form-check-input" type="radio" name="dsex" id="gender_m" value="Male">
+        <label class="form-check-label" for="gender_m">
+          Male
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="dsex" id="gender_f" value="Female">
+        <label class="form-check-label" for="gender_f">
+          Female
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="dsex" id="gender_o" value="others">
+        <label class="form-check-label" for="gender_o">
+          others
+        </label>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Address:</span>
+        <textarea class="form-control" aria-label="Address" name="dadd"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="input-group mb-3">
+        <span class="input-group-text">State:</span>
+        <input type="text" class="form-control" name="state">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-group mb-3">
+        <span class="input-group-text">City:</span>
+        <input type="text" class="form-control" name="city">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Zip:</span>
+        <input type="text" class="form-control" name="zip">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Username:</span>
+        <input type="text" class="form-control" aria-label="Username" name="duname">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Password:</span>
+        <input type="password" class="form-control" aria-label="Password" name="dpass">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-5">
+        <span class="input-group-text" id="basic-addon1">@Email:</span>
+        <input type="email" name="demail" aria-label="abc@gmail.com" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+    <input type="submit" value="submit" name="btn_reg" id="btn_reg" class="btn btn-success">
+  </form>
+  </div>
+</form>
+</div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styletag %}
+.footer, #footer{
+        position: relative;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+}
+.aboutbg{
+    background-color: #9ce2dc !important;
+  }
+.aboutbg-self{
+    background-color: #39c6ba;
+}
+{% endblock styletag %}
+
+<link rel="stylesheet" href="{% static 'style1.css' %}" type="text/css">
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+<!--header section-->
+
+<header class="py-4 aboutbg">
+  <div class="container px-5 ">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 col-xxl-6">
+              <div class="text-center my-5">
+                  <h1 class="fw-bolder mb-3">Our mission is to make booking appointment easier for everyone.</h1>
+                  <p class="lead fw-normal text-muted mb-4">Whenever we fall sick, there is a doctor who cures us and helps in regaining our energy. Doctors work for most of the hours a day to serve their patients. They work every day, even on the day of any festival. They have become the need of every individual in society. Their presence makes us feel secure in every situation.</p>
+                  <a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+<!--our teams -->
+<section class="py-5 aboutbg-self">
+  <div class="container px-5">
+      <div class="text-center">
+          <h2 class="fw-bolder">OUR TEAM</h2>
+          <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+      </div>
+      <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5 mb-5 mb-xl-0">
+              <div class="text-center">
+                  <img class="img-fluid rounded-circle mb-4 px-4" src="{% static 'logos/myprofile.jpeg' %}" alt="..." height="150" width="200"/>
+                  <h5 class="fw-bolder">Ashraf Patel</h5>
+                  <div class="fst-italic text-muted">Founder &amp; CEO</div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock body %}
