@@ -1,6 +1,6 @@
 # Doctor_appointment_system_Django
 A simple web application of Booking appointment of Doctor created in Django.
-**Modules**
+Modules.
 Registering the Doctor and Patient.
 Authentication of user and password and allowing successful login.
 User can Change username, Firstname, last name and also can Change the password.
